@@ -1,7 +1,5 @@
 package hibernate.concept.dbutill;
 
-import hibernate.concept.genral.Student;
-
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -13,7 +11,16 @@ public class MySessionFactory {
 
 	public static SessionFactory createSessionFactory() {
 		Configuration configuration = new Configuration();
-		configuration.addAnnotatedClass(Student.class);
+//		configuration.addAnnotatedClass(Student1.class);
+//		configuration.addAnnotatedClass(Student2.class);
+//		configuration.addAnnotatedClass(Address.class);
+		configuration.addAnnotatedClass(hibernate.concept.onetoone.User.class);
+		configuration.addAnnotatedClass(hibernate.concept.onetoone.Vehicle.class);
+		configuration.addAnnotatedClass(hibernate.concept.onetomany.User.class);
+		configuration.addAnnotatedClass(hibernate.concept.onetomany.Vehicle.class);
+		configuration.addAnnotatedClass(hibernate.concept.manytomany.User.class);
+		configuration.addAnnotatedClass(hibernate.concept.manytomany.Vehicle.class);
+				
 		String userDBName = "HibernateConcepts";
 		configuration.configure("hibernate.cfg.xml").setProperty("hibernate.connection.url",
 				"jdbc:mysql://localhost:3306/" + userDBName + "?characterEncoding=UTF-8");
