@@ -1,14 +1,18 @@
 package hibernate.concept.inheritance;
 
-public class FourWheeler extends Vechicle {
+import javax.persistence.Entity;
 
-	private String vechicleType;
+@Entity
+public class FourWheeler extends Vehicle {
 
-	public String getVechicleType() {
-		return vechicleType;
+	private String steeringWheel;
+
+	public String getSteeringWheel() {
+		return steeringWheel;
 	}
 
-	public void setVechicleType(String vechicleType) {
-		this.vechicleType = vechicleType;
+	public void setSteeringWheel(String steeringWheel) {
+		this.steeringWheel = steeringWheel;
 	}
+
 }
