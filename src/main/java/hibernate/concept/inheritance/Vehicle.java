@@ -3,8 +3,11 @@ package hibernate.concept.inheritance;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED) // we can mention SINGLE_TABLE or TABLE_PER_CLASS here to change inheritance strategy
 public class Vehicle {
 
 	@Id
